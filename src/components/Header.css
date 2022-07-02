@@ -1,0 +1,22 @@
+.header {
+  width: 923px;
+  height: 84px;
+  background-color: #7025fb;
+  position: relative;
+}
+
+.header img {
+  position: absolute;
+  left: 6.5%;
+  right: 63.62%;
+  top: 35.71%;
+  bottom: 36.49%;
+}
+
+.header > .landing {
+  position: absolute;
+  width: 923px;
+  height: 1196px;
+  left: 0px;
+  top: 84px;
+}

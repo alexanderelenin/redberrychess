@@ -1,0 +1,89 @@
+.registration {
+  background-color: #fd5334;
+  position: absolute;
+  width: 997px;
+  height: 1280px;
+  left: 923px;
+  top: 0px;
+}
+
+.chess {
+  position: fixed;
+  width: 496px;
+  height: 109px;
+  left: 1008px;
+  top: 265px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 109px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.who {
+  position: fixed;
+  width: 570px;
+  height: 109px;
+  left: 1008px;
+  top: 390px;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 109px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.about {
+  position: fixed;
+  width: 136px;
+  height: 27px;
+  left: 1530px;
+  top: 306px;
+
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: uppercase;
+
+  color: #212529;
+}
+
+.get-started {
+  display: flex;
+  align-items: center;
+  padding: 14px 22px;
+  justify-content: space-between;
+  position: fixed;
+  gap: 6px;
+  width: 191px;
+  height: 53px;
+  left: 1008px;
+  top: 601px;
+  background: #212529;
+  border-radius: 8px;
+  border: none;
+}
+
+.get-started span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 27px;
+  text-transform: capitalize;
+  color: #ffffff;
+  width: 110px;
+  justify-self: flex-start;
+}
+
+.get-started:hover {
+  cursor: pointer;
+  outline: 4px solid #c2a5f9cc;
+}
