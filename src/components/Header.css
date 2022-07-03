@@ -3,6 +3,8 @@
   height: 84px;
   background-color: #7025fb;
   position: relative;
+  top: 0;
+  left: 0;
 }
 
 .header img {
@@ -19,4 +21,41 @@
   height: 1196px;
   left: 0px;
   top: 84px;
+}
+
+.header .unscrollable {
+  position: fixed;
+  top: 84px;
+  left: 0;
+}
+
+.quote {
+  position: absolute;
+  width: 423px;
+  height: 83px;
+  left: 132px;
+  top: 335px;
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 45px;
+  text-transform: uppercase;
+  color: #212529;
+  gap: 40px;
+}
+
+.quote-author {
+  position: absolute;
+  width: 222px;
+  height: 33px;
+  left: 132px;
+  top: 442px;
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 33px;
+  text-transform: uppercase;
+  color: #e5e6e8;
 }

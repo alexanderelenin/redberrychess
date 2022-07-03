@@ -2,7 +2,7 @@ import "./Header.css";
 import logo from "../assets/logo.png";
 import landing from "../assets/landing.png";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <div className="header">
       <img src={logo} />

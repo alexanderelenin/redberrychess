@@ -1,19 +1,19 @@
 import "./Registration.css";
 import arrow from "../assets/arrow.png";
 
-const Registration = () => {
+const Registration = (props) => {
   return (
-    <div className="registration">
+    <form onSubmit={props.onFormHandler} className="registration">
       <h1 className="chess">
         CHESS SAYS <span className="about">A LOT ABOUT</span>{" "}
       </h1>
       <h1 className="who">WHO WE ARE</h1>
 
-      <button className="get-started">
+      <button type="submit" className="get-started">
         <span>Get Started</span>
-        <img src={arrow} alt="right ararow" />
+        <img src={arrow} alt="right arrow" />
       </button>
-    </div>
+    </form>
   );
 };
 
