@@ -2,7 +2,7 @@
   background-color: #fd5334;
   position: absolute;
   width: 997px;
-  height: 1280px;
+  height: 1080px;
   left: 923px;
   top: 0px;
 }
@@ -44,14 +44,12 @@
   height: 27px;
   left: 1530px;
   top: 306px;
-
   font-family: "Nunito";
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   line-height: 27px;
   text-transform: uppercase;
-
   color: #212529;
 }
 

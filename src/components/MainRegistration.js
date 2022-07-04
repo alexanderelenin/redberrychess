@@ -4,12 +4,16 @@ import mainform from "../assets/mainform.png";
 import logo from "../assets/logo.png";
 import RegistrationForm from "./RegistrationForm";
 
-const MainRegistration = () => {
+const MainRegistration = (props) => {
   return (
-    <div className="header">
+    <div>
+      <div className="mainregistration">
+        <div className="header">
+          <img src={logo} className="logo" />
+        </div>
+        <div className="mainform">{props.children}</div>
+      </div>
       <div>
-        <img src={logo} />
-        <img src={mainform} className="landing unscrollable  " />
         <h1 className="quote">
           "when you see a good move, look for a better one."
         </h1>

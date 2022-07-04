@@ -4,9 +4,11 @@ import landing from "../assets/landing.png";
 
 const Header = (props) => {
   return (
-    <div className="header">
-      <img src={logo} />
-      <img src={landing} className="landing" />
+    <div className="main">
+      <div className="header">
+        <img src={logo} className="logo" />
+      </div>
+      <div className="landing">{props.children}</div>
     </div>
   );
 };

@@ -1,40 +1,80 @@
+.main {
+  position: relative;
+  height: 1080px;
+}
+
 .header {
   width: 923px;
   height: 84px;
   background-color: #7025fb;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
-.header img {
+.header .logo {
   position: absolute;
   left: 6.5%;
   right: 63.62%;
   top: 35.71%;
   bottom: 36.49%;
+  z-index: 2;
 }
 
-.header > .landing {
+.landing {
   position: absolute;
   width: 923px;
-  height: 1196px;
+  height: inherit;
   left: 0px;
-  top: 84px;
+  top: 0px;
+
+  background: url("../assets/landing.png");
 }
 
-.header .unscrollable {
+.mainregistration {
+  height: 1080px;
+  width: 923px;
   position: fixed;
-  top: 84px;
+  top: 0;
   left: 0;
 }
 
-.quote {
+.mainform {
+  background: url("../assets/mainform.png");
+  background-position: center;
+  object-fit: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
+  top: 84px;
+  width: 100%;
+  height: 996px;
+}
+
+/* .texts {
+  position: fixed;
   width: 423px;
   height: 83px;
   left: 132px;
-  top: 335px;
+  top: 295px;
+
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 35px;
+  text-transform: uppercase;
+
+  color: #212529;
+} */
+
+.quote {
+  position: fixed;
+  width: 423px;
+  height: 83px;
+  left: 132px;
+  top: 290px;
   font-family: "Nunito";
   font-style: italic;
   font-weight: 800;
@@ -46,11 +86,11 @@
 }
 
 .quote-author {
-  position: absolute;
+  position: fixed;
   width: 222px;
   height: 33px;
   left: 132px;
-  top: 442px;
+  top: 402px;
   font-family: "Nunito";
   font-style: italic;
   font-weight: 500;
