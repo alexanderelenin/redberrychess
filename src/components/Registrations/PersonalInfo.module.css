@@ -1,0 +1,137 @@
+.personal {
+  position: absolute;
+  left: 991px;
+  top: 325px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 40px;
+  margin-top: 50px;
+  width: 775px;
+  height: 304px;
+  left: 971px;
+  top: 300px;
+}
+
+.title h1 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.title p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #95939a;
+}
+
+.input {
+  width: 775px;
+  height: 46px;
+  left: 971px;
+}
+.input input {
+  font-family: "Open Sans";
+  font-style: normal;
+  margin-left: 0;
+  font-size: 20px;
+  border: none;
+  padding: 8px 18px;
+  width: 775px;
+  height: 46px;
+  border: none;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+}
+
+/* .input input :active,
+:focus {
+  background-color: #dfe3e7;
+  border: none;
+  outline: none;
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+}
+
+.input input:hover,
+:focus {
+  background-color: #e9ecef;
+  cursor: pointer;
+} */
+
+.input label {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  transform: translateY(40px);
+  padding-left: 10px;
+  color: #212529;
+}
+
+.input input,
+label {
+  display: inline-block;
+}
+
+.input:hover > label {
+  color: #95939a;
+}
+
+.input label:hover {
+  color: #95939a;
+  cursor: pointer;
+}
+
+.input:focus > label {
+  display: none;
+}
+
+label {
+  transform: translateY(50px);
+}
+
+.invisible {
+  opacity: 0;
+}
+
+/*date calendar deleter*/
+.input input[type="date"]::-webkit-inner-spin-button,
+.input input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+.input input[type="date"]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+}
+.input input[type="date"]::-webkit-datetime-edit-month-field {
+  -webkit-appearance: none;
+  display: none;
+}
+.input input[type="date"]::-webkit-datetime-edit-day-field {
+  -webkit-appearance: none;
+  display: none;
+}
+.input input[type="date"]::-webkit-datetime-edit-year-field {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.required {
+  color: red;
+}
