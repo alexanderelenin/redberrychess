@@ -38,6 +38,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
 }
 
 .mainform {
@@ -98,4 +99,8 @@
   line-height: 33px;
   text-transform: uppercase;
   color: #e5e6e8;
+}
+
+.first-page {
+  position: relative;
 }

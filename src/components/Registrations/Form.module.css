@@ -1,0 +1,66 @@
+.form {
+  position: relative;
+  /* left: 971px; */
+}
+
+.header1 {
+  height: 84px;
+  position: relative;
+  width: 997px;
+  height: 0px;
+  left: 923px;
+  top: 84px;
+  border-bottom: 1px solid rgba(185, 180, 196, 0.3);
+}
+
+.title {
+  position: absolute;
+  width: 215px;
+  height: 24px;
+  right: 715px;
+  top: -54px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #212529;
+}
+
+.progress {
+  position: absolute;
+  width: 366px;
+  height: 65px;
+  left: 990px;
+  top: 144px;
+  display: flex;
+  justify-content: space-between;
+}
+.step1 {
+  text-align: center;
+}
+
+.step2 {
+  text-align: center;
+  transform: translateX(39px);
+  /*all these transformations were held due to be pixel-to-pixel correct, comparing to Figma Prototype provided by you <3*/
+}
+
+.step1,
+.step2 p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.step1::after {
+  position: absolute;
+  content: "";
+  width: 174px;
+  top: 19px;
+  left: 103px;
+  height: 1px;
+  background-color: rgba(185, 180, 196, 0.3);
+}

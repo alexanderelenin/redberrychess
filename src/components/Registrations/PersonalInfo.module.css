@@ -57,7 +57,7 @@
   border-radius: 4px;
 }
 
-/* .input input :active,
+.input input :active,
 :focus {
   background-color: #dfe3e7;
   border: none;
@@ -70,7 +70,7 @@
 :focus {
   background-color: #e9ecef;
   cursor: pointer;
-} */
+}
 
 .input label {
   font-family: "Open Sans";

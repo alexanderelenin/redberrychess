@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Registration from "./Registration";
+import GetStarted from "./GetStarted";
 import React, { useState } from "react";
 import "./Home.css";
 import MainRegistration from "./MainRegistration";
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="home">
       {!startRegistration && <Header />}
-      {!startRegistration && <Registration onFormHandler={checkingLog} />}
+      {!startRegistration && <GetStarted onFormHandler={checkingLog} />}
       {startRegistration && <MainRegistration />}
     </div>
   );

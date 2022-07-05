@@ -2,11 +2,12 @@ import React from "react";
 import "./Header.css";
 import mainform from "../assets/mainform.png";
 import logo from "../assets/logo.png";
-import RegistrationForm from "./RegistrationForm";
+
+import Form from "./Registrations/Form";
 
 const MainRegistration = (props) => {
   return (
-    <div>
+    <div className="first-page">
       <div className="mainregistration">
         <div className="header">
           <img src={logo} className="logo" />
@@ -19,6 +20,7 @@ const MainRegistration = (props) => {
         </h1>
         <h2 className="quote-author">-emanuel lasker</h2>
       </div>
+      <Form />
     </div>
   );
 };

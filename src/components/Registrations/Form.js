@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PersonalInfo from "./PersonalInfo";
 import ChessExperience from "./ChessExperince";
 import classes from "./Form.module.css";
@@ -6,6 +6,10 @@ import step1 from "../../assets/step1.png";
 import step2 from "../../assets/step2.png";
 
 const Form = () => {
+  // const [page, setPage] = useState(0);
+  // const nextPageHandler = setPage((curPage) => curPage + 1);
+  // const prevPageHandler = setPage((curPage) => curPage - 1);
+
   return (
     <form className={classes.form}>
       <div>

@@ -1,7 +1,7 @@
 import "./Registration.css";
 import arrow from "../assets/arrow.png";
 
-const Registration = (props) => {
+const GetStarted = (props) => {
   return (
     <form onSubmit={props.onFormHandler} className="registration">
       <h1 className="chess">
@@ -17,4 +17,4 @@ const Registration = (props) => {
   );
 };
 
-export default Registration;
+export default GetStarted;
