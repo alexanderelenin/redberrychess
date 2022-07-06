@@ -1,0 +1,131 @@
+.chess-info {
+  position: relative;
+
+  left: 961px;
+  top: 491px;
+}
+
+.dropdown {
+  position: relative;
+  width: 392px;
+  height: 46px;
+  left: 0px;
+  top: 0px;
+  user-select: none;
+  /* Gray/White */
+
+  background: #ffffff;
+  /* Border & Divider/divider ↓ */
+
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+}
+.dropdown-btn {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  text-align: center;
+  padding: 10px;
+}
+.dropdown-btn img {
+  width: 13px;
+  height: 7px;
+  align-self: center;
+}
+
+.dropdown-btn:hover {
+  cursor: pointer;
+}
+
+.dropdown span {
+  color: red;
+}
+
+.dropdown-content {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+
+  color: #000000;
+  position: absolute;
+  width: 392px;
+  height: 199px;
+  left: 0px;
+  top: 0px;
+  border: 1px solid rgba(185, 180, 196, 0.3);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-top: 50px;
+  height: 210px;
+}
+
+.dropdown-item {
+  padding: 20px 8px;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background-color: #f7f7f9;
+  font-weight: 600;
+}
+
+.chess-player {
+  position: relative;
+
+  left: 1381px;
+  top: 445px;
+}
+.grandmaster {
+  position: relative;
+  width: 392px;
+  height: 46px;
+  left: 0px;
+  top: 0px;
+  user-select: none;
+  /* Gray/White */
+
+  background: #ffffff;
+  /* Border & Divider/divider ↓ */
+
+  box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.grandmaster span {
+  color: red;
+}
+
+.player-content {
+  width: 391px;
+  height: 419px;
+  background: #ffffff;
+  border: 1px solid rgba(185, 180, 196, 0.3);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.player-item {
+  width: 344px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 30px */
+
+  /* Gray/900 */
+
+  color: #212529;
+}

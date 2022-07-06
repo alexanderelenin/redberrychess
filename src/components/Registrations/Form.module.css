@@ -15,9 +15,9 @@
 
 .title {
   position: absolute;
-  width: 215px;
+  width: 380px;
   height: 24px;
-  right: 715px;
+  right: 570px;
   top: -54px;
   font-family: "Open Sans";
   font-style: normal;
@@ -32,7 +32,7 @@
   position: absolute;
   width: 366px;
   height: 65px;
-  left: 990px;
+  right: 580px;
   top: 144px;
   display: flex;
   justify-content: space-between;

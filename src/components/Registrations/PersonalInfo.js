@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classes from "./PersonalInfo.module.css";
-import Button from "../UI/Button";
 
 const PersonalInfo = () => {
   const nameChangeHandler = (event) => {};
@@ -60,11 +59,6 @@ const PersonalInfo = () => {
           <input type="date-type" id="date" onChange={nameChangeHandler} />
         </div>
       </div>
-
-      <Button className="btn-back">Back</Button>
-      <Button className="btn-next" onClick={clickLog}>
-        Next
-      </Button>
     </form>
   );
 };

@@ -1,0 +1,53 @@
+.personal-chess h1 {
+  position: absolute;
+  width: 269px;
+  height: 48px;
+  left: 971px;
+  top: 324px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 150%;
+  /* identical to box height, or 48px */
+
+  color: #000000;
+}
+.personal-chess > p {
+  position: absolute;
+  width: 205px;
+  height: 21px;
+  left: 971px;
+  top: 375px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  /* identical to box height, or 21px */
+
+  text-transform: capitalize;
+
+  color: #95939a;
+}
+
+.chess-title {
+  position: absolute;
+  width: 383px;
+  height: 24px;
+  left: 971px;
+  top: 30px;
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+
+  text-transform: capitalize;
+
+  color: #212529;
+}

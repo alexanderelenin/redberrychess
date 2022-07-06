@@ -2,7 +2,8 @@ import Header from "./Header";
 import GetStarted from "./GetStarted";
 import React, { useState } from "react";
 import "./Home.css";
-import MainRegistration from "./MainRegistration";
+import PersonalRegistration from "./PersonalRegistration";
+import ChessExperience from "./Registrations/ChessExperince";
 
 const Home = () => {
   const [startRegistration, setStartRegistration] = useState(false);
@@ -15,9 +16,9 @@ const Home = () => {
 
   return (
     <div className="home">
-      {!startRegistration && <Header />}
       {!startRegistration && <GetStarted onFormHandler={checkingLog} />}
-      {startRegistration && <MainRegistration />}
+      {/* {startRegistration && <PersonalRegistration />} */}
+      {startRegistration && <ChessExperience />}
     </div>
   );
 };

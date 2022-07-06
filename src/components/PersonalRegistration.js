@@ -2,10 +2,11 @@ import React from "react";
 import "./Header.css";
 import mainform from "../assets/mainform.png";
 import logo from "../assets/logo.png";
+import PersonalInfo from "./Registrations/PersonalInfo";
+import Button from "./UI/Button";
+import PersonalForm from "./Registrations/PersonalForm";
 
-import Form from "./Registrations/Form";
-
-const MainRegistration = (props) => {
+const PersonalRegistration = (props) => {
   return (
     <div className="first-page">
       <div className="mainregistration">
@@ -20,9 +21,12 @@ const MainRegistration = (props) => {
         </h1>
         <h2 className="quote-author">-emanuel lasker</h2>
       </div>
-      <Form />
+      <PersonalForm />
+
+      <Button className="btn-back">Back</Button>
+      <Button className="btn-next">Next</Button>
     </div>
   );
 };
 
-export default MainRegistration;
+export default PersonalRegistration;

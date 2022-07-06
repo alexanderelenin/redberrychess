@@ -1,6 +1,6 @@
 .personal {
   position: absolute;
-  left: 991px;
+  left: 971px;
   top: 325px;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   margin-top: 50px;
   width: 775px;
   height: 304px;
-  left: 971px;
+  left: 951px;
   top: 300px;
 }
 
@@ -41,7 +41,7 @@
 .input {
   width: 775px;
   height: 46px;
-  left: 971px;
+  left: 951px;
 }
 .input input {
   font-family: "Open Sans";

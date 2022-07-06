@@ -4,11 +4,11 @@ import landing from "../assets/landing.png";
 
 const Header = (props) => {
   return (
-    <div className="main">
+    <div className={props.className === "chess-header" ? "chess-logo" : "main"}>
       <div className="header">
         <img src={logo} className="logo" />
       </div>
-      <div className="landing">{props.children}</div>
+      <div className={props.className}>{props.children}</div>
     </div>
   );
 };
