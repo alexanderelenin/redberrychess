@@ -28,7 +28,9 @@ const DropDownPlayer = ({
               key={player.id}
             >
               {player.name}
-              <img src={player.image} />
+              <img
+                src={`https://chess-tournament-api.devtest.ge/${player.image}`}
+              />
             </div>
           ))}
         </div>
