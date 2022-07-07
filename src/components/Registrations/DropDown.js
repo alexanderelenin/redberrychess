@@ -18,6 +18,7 @@ const DropDown = ({ selected, setSelected }) => {
               onClick={(e) => {
                 setSelected(option);
                 setIsActive(!isActive);
+                console.log(option);
               }}
               className="dropdown-item"
               key={options[option]}

@@ -21,7 +21,7 @@ const DropDownPlayer = ({
           {playersArray.map((player) => (
             <div
               onClick={(e) => {
-                setSelectedPlayer(playersArray.player.name);
+                setSelectedPlayer(player.name);
                 setIsActive(!isActive);
               }}
               className="player-item"
@@ -29,6 +29,7 @@ const DropDownPlayer = ({
             >
               {player.name}
               <img
+                className="player-image"
                 src={`https://chess-tournament-api.devtest.ge/${player.image}`}
               />
             </div>

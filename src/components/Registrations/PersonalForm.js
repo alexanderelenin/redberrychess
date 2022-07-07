@@ -4,11 +4,7 @@ import classes from "./Form.module.css";
 import step1 from "../../assets/step1.png";
 import step2 from "../../assets/step2.png";
 
-const Form = () => {
-  // const [page, setPage] = useState(0);
-  // const nextPageHandler = setPage((curPage) => curPage + 1);
-  // const prevPageHandler = setPage((curPage) => curPage - 1);
-
+const PersonalForm = () => {
   return (
     <form className={classes.form}>
       <div>
@@ -29,9 +25,9 @@ const Form = () => {
           <div></div>
         </div>
       </div>
-      <PersonalInfo />
+      {/* <PersonalInfo /> */}
     </form>
   );
 };
 
-export default Form;
+export default PersonalForm;

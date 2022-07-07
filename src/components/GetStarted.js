@@ -7,7 +7,7 @@ const GetStarted = (props) => {
   return (
     <React.Fragment>
       <Header className="landing" />
-      <form onSubmit={props.onFormHandler} className="registration">
+      <form onSubmit={props.onGetStarted} className="registration">
         <h1 className="chess">
           CHESS SAYS <span className="about">A LOT ABOUT</span>{" "}
         </h1>

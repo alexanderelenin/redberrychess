@@ -39,9 +39,9 @@
 }
 
 .input {
+  position: relative;
   width: 775px;
   height: 46px;
-  left: 951px;
 }
 .input input {
   font-family: "Open Sans";
@@ -73,6 +73,7 @@
 }
 
 .input label {
+  position: absolute;
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -81,6 +82,7 @@
   transform: translateY(40px);
   padding-left: 10px;
   color: #212529;
+  bottom: 45px;
 }
 
 .input input,
@@ -110,11 +112,11 @@ label {
 }
 
 /*date calendar deleter*/
-.input input[type="date"]::-webkit-inner-spin-button,
+/* .input input[type="date"]::-webkit-inner-spin-button,
 .input input[type="date"]::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
-}
+} */
 .input input[type="date"]::-webkit-datetime-edit-text {
   -webkit-appearance: none;
   display: none;
@@ -131,7 +133,6 @@ label {
   -webkit-appearance: none;
   display: none;
 }
-
 .required {
   color: red;
 }

@@ -1,24 +1,34 @@
 import Header from "./Header";
 import GetStarted from "./GetStarted";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Home.css";
 import PersonalRegistration from "./PersonalRegistration";
 import ChessExperience from "./Registrations/ChessExperince";
 
 const Home = () => {
-  const [startRegistration, setStartRegistration] = useState(false);
-
-  const checkingLog = (event) => {
-    event.preventDefault();
-    console.log("clicked");
-    setStartRegistration(true);
+  const [page, setPage] = useState(0);
+  const nextPageHandler = () => {
+    setPage((curPage) => curPage + 1);
+  };
+  const prevPageHandler = () => {
+    setPage((curPage) => curPage - 1);
   };
 
   return (
     <div className="home">
-      {!startRegistration && <GetStarted onFormHandler={checkingLog} />}
-      {/* {startRegistration && <PersonalRegistration />} */}
-      {startRegistration && <ChessExperience />}
+      {page === 0 && <GetStarted onGetStarted={nextPageHandler} />}
+      {page === 1 && (
+        <PersonalRegistration
+          onNext={nextPageHandler}
+          onPrevious={prevPageHandler}
+        />
+      )}
+      {page === 2 && (
+        <ChessExperience
+          onNext={nextPageHandler}
+          onPrevious={prevPageHandler}
+        />
+      )}
     </div>
   );
 };

@@ -19,6 +19,7 @@
 
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
   border-radius: 4px;
+  z-index: 2;
 }
 .dropdown-btn {
   display: flex;
@@ -52,7 +53,7 @@
   font-size: 20px;
   line-height: 150%;
   /* identical to box height, or 30px */
-
+  background: #ffffff;
   color: #000000;
   position: absolute;
   width: 392px;
@@ -117,15 +118,73 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 150%;
-  /* identical to box height, or 30px */
-
-  /* Gray/900 */
-
   color: #212529;
+  margin: 25px;
+  cursor: pointer;
+}
+
+.player-item:hover {
+  background-color: #f7f7f9;
+}
+
+.player-image {
+  width: 100px;
+  height: 72px;
+  object-fit: cover;
+  /* margin: 10px; */
+  border-radius: 4px;
+}
+
+.participation {
+  position: absolute;
+  width: 775px;
+  height: 46px;
+  left: 960px;
+  top: 617px;
+
+  /* Gray/White */
+
+  background: #ffffff;
+  border-radius: 4px;
+}
+.radio {
+  display: flex;
+  justify-content: space-around;
+  width: 58px;
+  height: 24px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+.answers {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 150px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+.participation > h1 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  width: 743px;
+  height: 30px;
+  padding: 8px 16px;
+}
+.participation span {
+  color: red;
 }

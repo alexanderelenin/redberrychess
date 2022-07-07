@@ -3,7 +3,7 @@ import DropDown from "./DropDown";
 import DropDownPlayer from "./DropDownPlayer";
 import "./DropDown.css";
 
-const ChessInfo = () => {
+const ChessInfo = (props) => {
   const level = (
     <p className="level">
       level of knowledge <span>*</span>
@@ -26,9 +26,19 @@ const ChessInfo = () => {
     setPlayers(data);
   }, []);
 
-  useCallback(fetchGrandmasters(), [players]);
+  useEffect(() => {
+    fetchGrandmasters();
+  }, []);
+
+  // useCallback(fetchGrandmasters(), [players]);
+
+  const [participated, setParticipated] = useState(true);
   const [selected, setSelected] = useState(level);
   const [selectedPlayer, setSelectedPlayer] = useState(defaultPlayer);
+  const participateHandler = () => {
+    setParticipated(!participated);
+    console.log(participated);
+  };
   return (
     <div>
       <div className="chess-info">
@@ -40,6 +50,34 @@ const ChessInfo = () => {
           setSelectedPlayer={setSelectedPlayer}
           playersArray={players}
         />
+      </div>
+      <div className="participation">
+        <h1>
+          Have you ever participated in the Redberry Championship?{" "}
+          <span>*</span>
+        </h1>
+        <div className="answers">
+          <div className="radio">
+            <input
+              type="radio"
+              value="yes"
+              name="answer"
+              className="answer"
+              onClick={participateHandler}
+            />
+            <p>Yes</p>
+          </div>
+          <div className="radio">
+            <input
+              type="radio"
+              value="no"
+              name="answer"
+              className="answer"
+              onClick={participateHandler}
+            />
+            <p>No</p>
+          </div>
+        </div>
       </div>
     </div>
   );

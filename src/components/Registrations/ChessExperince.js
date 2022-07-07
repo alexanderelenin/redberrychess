@@ -7,7 +7,7 @@ import "./ChessExperience.css";
 import Button from "../UI/Button";
 import ChessInfo from "./ChessInfo";
 
-const ChessExperience = () => {
+const ChessExperience = (props) => {
   return (
     <React.Fragment>
       <Header className="chess-header">
@@ -43,8 +43,12 @@ const ChessExperience = () => {
         <p>This Is Basic Information Fields</p>
       </div>
       <ChessInfo />
-      <Button className="btn-back">Back</Button>
-      <Button className="btn-next">Next</Button>
+      <Button onClick={props.onPrevious} className="btn-back">
+        Back
+      </Button>
+      <Button onClick={props.onNext} className="btn-next">
+        Next
+      </Button>
     </React.Fragment>
   );
 };
