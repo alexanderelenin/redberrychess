@@ -7,26 +7,47 @@ import ChessExperience from "./Registrations/ChessExperince";
 
 const Home = () => {
   const [page, setPage] = useState(0);
-  const nextPageHandler = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    level: "",
+    character: "",
+    participated: null,
+  });
+  const nextPageHandler = (e) => {
+    e.preventDefault();
     setPage((curPage) => curPage + 1);
   };
-  const prevPageHandler = () => {
+  const prevPageHandler = (e) => {
+    e.preventDefault();
     setPage((curPage) => curPage - 1);
   };
 
   return (
     <div className="home">
-      {page === 0 && <GetStarted onGetStarted={nextPageHandler} />}
+      {page === 0 && (
+        <GetStarted
+          onGetStarted={nextPageHandler}
+          formData={formData}
+          setFormData={setFormData}
+        />
+      )}
       {page === 1 && (
         <PersonalRegistration
           onNext={nextPageHandler}
           onPrevious={prevPageHandler}
+          formData={formData}
+          setFormData={setFormData}
         />
       )}
       {page === 2 && (
         <ChessExperience
           onNext={nextPageHandler}
           onPrevious={prevPageHandler}
+          formData={formData}
+          setFormData={setFormData}
         />
       )}
     </div>

@@ -57,7 +57,7 @@
   border-radius: 4px;
 }
 
-.input input :active,
+.input > input :active,
 :focus {
   background-color: #dfe3e7;
   border: none;
@@ -66,13 +66,14 @@
   border-radius: 4px;
 }
 
-.input input:hover,
+.input > input:hover,
 :focus {
   background-color: #e9ecef;
   cursor: pointer;
 }
 
 .input label {
+  min-width: 200px;
   position: absolute;
   font-family: "Open Sans";
   font-style: normal;
@@ -83,6 +84,8 @@
   padding-left: 10px;
   color: #212529;
   bottom: 45px;
+  z-index: 2;
+  background-color: #fff;
 }
 
 .input input,
@@ -92,6 +95,7 @@ label {
 
 .input:hover > label {
   color: #95939a;
+  background-color: #e9ecef;
 }
 
 .input label:hover {
@@ -112,16 +116,18 @@ label {
 }
 
 /*date calendar deleter*/
-/* .input input[type="date"]::-webkit-inner-spin-button,
-.input input[type="date"]::-webkit-calendar-picker-indicator {
+.input input[type="date"]::-webkit-calendar-picker-indicator,
+.input input[type="date"]::-webkit-inner-spin-button {
   display: none;
   -webkit-appearance: none;
-} */
-.input input[type="date"]::-webkit-datetime-edit-text {
-  -webkit-appearance: none;
-  display: none;
+  opacity: 0;
 }
-.input input[type="date"]::-webkit-datetime-edit-month-field {
+/* .input input[type="date"]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+} */
+
+/* .input input[type="date"]::-webkit-datetime-edit-month-field {
   -webkit-appearance: none;
   display: none;
 }
@@ -132,7 +138,13 @@ label {
 .input input[type="date"]::-webkit-datetime-edit-year-field {
   -webkit-appearance: none;
   display: none;
-}
+} */
 .required {
   color: red;
+}
+
+.valid {
+  position: absolute;
+  right: 10px;
+  top: 12px;
 }

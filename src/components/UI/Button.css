@@ -43,3 +43,11 @@
 .btn-next:hover {
   cursor: pointer;
 }
+/* 
+.btn-next:hover {
+  outline: 4px solid #c2a5f9cc;
+}
+
+.btn-next:active {
+  background-color: #212529;
+} */
