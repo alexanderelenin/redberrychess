@@ -13,11 +13,11 @@ import ErrorModal from "../UI/ErrorModal";
 import { type } from "@testing-library/user-event/dist/type";
 
 const ChessExperience = (props) => {
-  // const level = (
-  //   <p className="level">
-  //     level of knowledge <span>*</span>
-  //   </p>
-  // );
+  const level = (
+    <p className="level">
+      level of knowledge <span>*</span>
+    </p>
+  );
   const defaultPlayer = (
     <p className="default-player">
       Choose your character <span>*</span>
@@ -25,7 +25,7 @@ const ChessExperience = (props) => {
   );
 
   const [participated, setParticipated] = useState(true);
-  const [selected, setSelected] = useState("level of knowledge");
+  const [selected, setSelected] = useState(level);
   const [selectedPlayer, setSelectedPlayer] = useState(defaultPlayer);
 
   const [levelInputValid, setLevelInputValid] = useState(false);
@@ -75,24 +75,21 @@ const ChessExperience = (props) => {
     });
 
     console.log(selected);
+
     props.setFormData({
       ...props.formData,
       character_id: selectedPlayer,
     });
 
-    console.log(props.formData.experience_level);
+    // console.log(props.formData.experience_level);
 
-    if (props.formData.experience_level === "level of knowledge") {
-      setLevelInputValid(true);
-    } else {
-      setLevelInputValid(false);
-    }
+    // if (!props.formData.experience_level) {
+    //   setLevelInputValid(true);
+    // }
 
-    if (!props.formData.character_id) {
-      setCharInputValid(true);
-    }
-
-    props.onNext();
+    // if (!props.formData.character_id) {
+    //   setCharInputValid(true);
+    // }
   };
 
   const levelErrorHandler = () => {
@@ -203,7 +200,13 @@ const ChessExperience = (props) => {
       <Button onClick={props.onPrevious} className="btn-back">
         Back
       </Button>
-      <Button type="submit" className="done">
+      <Button
+        type="submit"
+        // onClick={
+        //   selected !== level && selectedPlayer !== defaultPlayer && props.onNext
+        // }
+        className="done"
+      >
         Done
       </Button>
     </form>
