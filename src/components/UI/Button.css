@@ -14,18 +14,43 @@
   border-radius: 8px;
   padding: 13px 24px;
   gap: 10px;
-  left: 1618px;
+  left: 1638px;
+  top: 873px;
+}
+.done {
+  background-color: #212529;
+  color: white;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  width: 100px;
+  height: 53px;
+  line-height: 27px;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  border-radius: 8px;
+  padding: 10px 24px;
+
+  right: 138px;
   top: 873px;
 }
 
+.done:hover {
+  cursor: pointer;
+  outline: 4px solid #c2a5f9cc;
+}
+
 .btn-back {
+  background-color: #fff;
   align-items: center;
   padding: 13px 24px;
   gap: 10px;
   position: absolute;
   width: 93px;
   height: 53px;
-  left: 971px;
+  left: 991px;
   top: 873px;
   border: 1px solid #212529;
   border-radius: 8px;
@@ -43,11 +68,17 @@
 .btn-next:hover {
   cursor: pointer;
 }
-/* 
+
+.btn-back:hover {
+  background: rgba(185, 180, 196, 0.3);
+  border: 1px solid rgba(194, 165, 249, 0.8);
+  border-radius: 8px;
+}
+
 .btn-next:hover {
   outline: 4px solid #c2a5f9cc;
 }
 
 .btn-next:active {
   background-color: #212529;
-} */
+}

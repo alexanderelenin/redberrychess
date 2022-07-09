@@ -1,91 +1,111 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 import logo from "../assets/logo.png";
-
 import Button from "./UI/Button";
 import PersonalForm from "./Registrations/PersonalForm";
 import classes from "../components/Registrations/PersonalInfo.module.css";
 import invalid from "../assets/invalid.svg";
 import valid from "../assets/valid.svg";
+import ErrorModal from "./UI/ErrorModal";
 
-const PersonalRegistration = ({ formData, setFormData }, props) => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [birth, setBirth] = useState("");
+const PersonalRegistration = (props) => {
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState();
+  const [phoneError, setPhoneError] = useState();
+  const [dateError, setDateError] = useState();
 
-  const [labelInvalid, setLabelInvalid] = useState(true);
+  const [nameInputValid, setNameInputValid] = useState(null);
+  const [emailInputValid, setEmailInutValid] = useState(null);
+  const [phoneInputValid, setPhoneInputValid] = useState(null);
+  const [dateInputValid, setDateInputValid] = useState(null);
 
-  const [nameInputValid, setNameInputValid] = useState();
-  const [emailInputValid, setEmailInutValid] = useState();
-  const [phoneInputValid, setPhoneInputValid] = useState();
-  const [birthInputValid, setBirthInputValid] = useState();
-
-  // const [formIsValid, setFormIsValid] = useState();
   const [validity, setValidty] = useState();
 
   const submitHandler = (e) => {
     e.preventDefault();
-
-    // localStorage.setItem("name", JSON.stringify(name));
-
-    // localStorage.setItem("isStarted", "1");
     setValidty(true);
-    formData.name.length > 2 && !/\d/.test(formData.name)
-      ? setNameInputValid(true)
-      : setEmailInutValid(false);
 
-    email.trim().toLowerCase().slice(email.indexOf("@"), email.length) ===
-    "@redberry.ge"
-      ? setEmailInutValid(true)
-      : setEmailInutValid(false);
+    if (props.formData.name.length > 2 && !/\d/.test(props.formData.name)) {
+      setNameInputValid(true);
+      setNameError(false);
+    } else {
+      setNameInputValid(false);
+      setNameError(true);
+    }
 
-    phone.trim().length === 9 && /^\d+$/.test(phone)
-      ? setPhoneInputValid(true)
-      : setPhoneInputValid(false);
+    if (
+      props.formData.email
+        .trim()
+        .toLowerCase()
+        .slice(
+          props.formData.email.indexOf("@"),
+          props.formData.email.length
+        ) === "@redberry.ge"
+    ) {
+      setEmailInutValid(true);
+      setEmailError(false);
+    } else {
+      setEmailInutValid(false);
+      setEmailError(true);
+    }
 
-    birth !== "" ? setBirthInputValid(true) : setBirthInputValid(false);
+    if (
+      props.formData.phone.trim().length === 9 &&
+      /^\d+$/.test(props.formData.phone)
+    ) {
+      setPhoneInputValid(true);
+      setPhoneError(false);
+    } else {
+      setPhoneInputValid(false);
+      setPhoneError(true);
+    }
+    if (props.formData.date_of_birth !== "") {
+      setDateInputValid(true);
+      setDateError(false);
+    } else {
+      setDateInputValid(false);
+      setDateError(true);
+    }
+  };
+
+  const nameErrorHandler = () => {
+    setNameError(false);
+  };
+  const emailErrorHandler = () => {
+    setEmailError(false);
+  };
+
+  const phoneErrorHandler = () => {
+    setPhoneError(false);
+  };
+
+  const dateErrorHandler = () => {
+    setDateError(false);
   };
 
   const nameChangeHandler = (event) => {
-    setFormData({ ...formData, name: event.target.value });
-    // setName(event.target.value);
-    // localStorage.setItem("name", JSON.stringify(name));
+    props.setFormData({ ...props.formData, name: event.target.value });
   };
-  // useEffect(() => {
-  //   setName(JSON.parse(localStorage.getItem("name")));
-  //   if (name.length > 2) {
-  //     setLabelInvalid(false);
-  //   }
-  // }, [labelInvalid]);
 
   const emailChangeHandler = (e) => {
-    setEmail(e.target.value);
-    // localStorage.setItem("email", JSON.stringify(email));
-
-    // console.log(emailIsValid);
+    props.setFormData({ ...props.formData, email: e.target.value });
   };
-  // useEffect(() => {
-  //   setEmail(JSON.parse(localStorage.getItem("email")));
-  // });
 
   const phoneChangeHandler = (e) => {
-    setPhone(e.target.value);
+    props.setFormData({ ...props.formData, phone: e.target.value });
   };
 
   const dateChangeHandler = (e) => {
-    setBirth(e.target.value);
-    // console.log(new Date(birth).getMonth() + 1);
+    props.setFormData({ ...props.formData, date_of_birth: e.target.value });
   };
 
+  //Focusing functions for inputs and labels
   const unfocus = (e) => {
     e.preventDefault();
     e.target.style.display = "none";
     e.target.nextElementSibling.focus();
     console.log("clicked");
-
-    // if(e.target.nextElementSibling.value!==)
   };
 
   const labelUnfocus = (e) => {
@@ -98,14 +118,8 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
     }
   };
 
-  // useEffect(() => {
-  //   setName(JSON.parse(window.localStorage.getItem("firstname")));
-  // }, []);
-  // useEffect(() => {
-  //   window.localStorage.setItem("firstname", name);onSubmit={submitHandler}
-  // }, [name]);
   return (
-    <form onSubmit={submitHandler} className="first-page">
+    <form onSubmit={submitHandler} className={classes["first-page"]}>
       <div className="mainregistration">
         <div className="header">
           <img src={logo} className="logo" />
@@ -118,8 +132,18 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
         </h1>
         <h2 className="quote-author">-emanuel lasker</h2>
       </div>
-
       <PersonalForm />
+
+      {dateError && (
+        <ErrorModal onClick={dateErrorHandler} target="date of birth" />
+      )}
+      {phoneError && (
+        <ErrorModal onClick={phoneErrorHandler} target="phone number" />
+      )}
+      {emailError && (
+        <ErrorModal onClick={emailErrorHandler} target="email address" />
+      )}
+      {nameError && <ErrorModal onClick={nameErrorHandler} target="name" />}
 
       <div className={classes.personal}>
         <div className={classes.title}>
@@ -129,19 +153,19 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
 
         <div className={classes["form-control"]}>
           <div className={classes.input}>
-            {formData.name.length < 2 && (
+            {props.formData.name === "" && (
               <label onClick={unfocus} htmlFor="name">
                 Name <span className={classes.required}>*</span>
               </label>
             )}
 
             <input
-              //ref={nameRef}
+              // ref={nameRef}
               type="text"
               id="name"
               onChange={nameChangeHandler}
               className={classes.inputItem}
-              value={formData.name}
+              value={props.formData.name}
               onFocus={labelUnfocus}
               onBlur={focusReset}
             />
@@ -155,14 +179,16 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
           </div>
 
           <div className={classes.input}>
-            <label onClick={unfocus} htmlFor="email">
-              Email address<span className={classes.required}>*</span>
-            </label>
+            {props.formData.email === "" && (
+              <label onClick={unfocus} htmlFor="email">
+                Email address<span className={classes.required}>*</span>
+              </label>
+            )}
 
             <input
               type="email"
               id="email"
-              value={email}
+              value={props.formData.email}
               onChange={emailChangeHandler}
               onFocus={labelUnfocus}
               onBlur={focusReset}
@@ -177,14 +203,16 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
           </div>
 
           <div className={classes.input}>
-            <label onClick={unfocus} htmlFor="phone">
-              Phone number<span className={classes.required}>*</span>
-            </label>
+            {props.formData.phone === "" && (
+              <label onClick={unfocus} htmlFor="phone">
+                Phone number<span className={classes.required}>*</span>
+              </label>
+            )}
 
             <input
               type="text"
               id="phone"
-              value={phone}
+              value={props.formData.phone}
               onChange={phoneChangeHandler}
               onFocus={labelUnfocus}
               onBlur={focusReset}
@@ -198,9 +226,11 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
           </div>
 
           <div className={classes.input}>
-            <label onClick={unfocus} htmlFor="date">
-              Date Of Birth<span className={classes.required}>*</span>
-            </label>
+            {props.formData.date_of_birth === "" && (
+              <label onClick={unfocus} htmlFor="date">
+                Date Of Birth<span className={classes.required}>*</span>
+              </label>
+            )}
 
             <input
               type="date"
@@ -208,22 +238,31 @@ const PersonalRegistration = ({ formData, setFormData }, props) => {
               onFocus={labelUnfocus}
               onBlur={focusReset}
               onChange={dateChangeHandler}
-              value={birth}
+              value={props.formData.date_of_birth}
             />
             {validity && (
               <img
-                src={birthInputValid ? valid : invalid}
+                src={dateInputValid ? valid : invalid}
                 className={classes.valid}
               />
             )}
           </div>
         </div>
       </div>
-      <Button type="button" onClick={props.onPrevious} className="btn-back">
+      <Button onClick={props.onPrevious} type="button" className="btn-back">
         Back
       </Button>
-
-      <Button onClick={props.onNext} className="btn-next">
+      <Button
+        type="submit"
+        onClick={
+          nameInputValid &&
+          emailInputValid &&
+          phoneInputValid &&
+          dateInputValid &&
+          props.onNext
+        }
+        className="btn-next"
+      >
         Next
       </Button>
     </form>

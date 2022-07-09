@@ -69,7 +69,7 @@
   border: none;
 }
 
-.get-started span {
+.get-started > span {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
@@ -81,7 +81,7 @@
   justify-self: flex-start;
 }
 
-.get-started:hover {
+button.get-started:hover {
   cursor: pointer;
   outline: 4px solid #c2a5f9cc;
 }

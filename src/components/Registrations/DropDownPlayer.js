@@ -14,7 +14,7 @@ const DropDownPlayer = ({
     <div className="grandmaster">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
         <p>{selectedPlayer}</p>
-        <img src={!isActive ? chevrondown : chevronup} />
+        <img src={!isActive ? chevrondown : chevronup} alt="chevron" />
       </div>
       {isActive && (
         <div className="player-content">
@@ -31,6 +31,7 @@ const DropDownPlayer = ({
               <img
                 className="player-image"
                 src={`https://chess-tournament-api.devtest.ge/${player.image}`}
+                alt="groSSmeister"
               />
             </div>
           ))}

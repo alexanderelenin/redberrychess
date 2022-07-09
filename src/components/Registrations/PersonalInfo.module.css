@@ -1,6 +1,6 @@
 .personal {
   position: absolute;
-  left: 971px;
+  left: 991px;
   top: 325px;
   display: flex;
   flex-direction: column;
@@ -12,11 +12,11 @@
   align-items: flex-start;
 
   gap: 40px;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 775px;
   height: 304px;
   left: 951px;
-  top: 300px;
+  top: 250px;
 }
 
 .title h1 {
@@ -42,8 +42,14 @@
   position: relative;
   width: 775px;
   height: 46px;
+  outline: none;
+  border: none;
 }
-.input input {
+
+/* .input :focus {
+  outline: none;
+} */
+.input > input {
   font-family: "Open Sans";
   font-style: normal;
   margin-left: 0;
@@ -57,17 +63,14 @@
   border-radius: 4px;
 }
 
-.input > input :active,
-:focus {
+.input :focus {
   background-color: #dfe3e7;
   border: none;
   outline: none;
   box-shadow: inset 0px -1px 0px rgba(0, 0, 0, 0.125);
   border-radius: 4px;
 }
-
-.input > input:hover,
-:focus {
+.input > input:hover {
   background-color: #e9ecef;
   cursor: pointer;
 }
@@ -147,4 +150,8 @@ label {
   position: absolute;
   right: 10px;
   top: 12px;
+}
+
+.first-page {
+  position: relative;
 }

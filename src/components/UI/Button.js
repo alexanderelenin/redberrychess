@@ -10,7 +10,7 @@ const Button = (props) => {
       type={props.type}
     >
       {props.children}
-      {props.className === "btn-next" && <img src={arrow} alt="button" />}
+      {props.className === "btn-next" ? <img src={arrow} alt="button" /> : null}
     </button>
   );
 };

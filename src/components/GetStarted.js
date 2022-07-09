@@ -13,10 +13,10 @@ const GetStarted = (props) => {
         </h1>
         <h1 className="who">WHO WE ARE</h1>
 
-        <button type="submit" className="get-started">
+        <Button type="submit" className="get-started">
           <span>Get Started</span>
           <img src={arrow} alt="right arrow" />
-        </button>
+        </Button>
       </form>
     </React.Fragment>
   );

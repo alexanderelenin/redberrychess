@@ -1,0 +1,58 @@
+.modal {
+  width: 350px;
+  height: 87px;
+  background-color: #fff;
+  position: absolute;
+  top: 226px;
+  right: 39px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.target-error {
+  display: flex;
+  height: 39px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.invalid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.invalid > p {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height, or 150% */
+
+  color: #dc3545;
+}
+.invalid > img {
+  padding: 9px 12px;
+}
+.sentence {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  padding: 12px;
+}
+
+.x {
+  padding: 9px 12px;
+}
+
+.button {
+  background-color: #fff;
+  border: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}

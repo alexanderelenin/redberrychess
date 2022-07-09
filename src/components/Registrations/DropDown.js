@@ -9,7 +9,7 @@ const DropDown = ({ selected, setSelected }) => {
     <div className="dropdown">
       <div className="dropdown-btn" onClick={(e) => setIsActive(!isActive)}>
         <p>{selected}</p>
-        <img src={!isActive ? chevrondown : chevronup} />
+        <img src={!isActive ? chevrondown : chevronup} alt="chevron" />
       </div>
       {isActive && (
         <div className="dropdown-content">
