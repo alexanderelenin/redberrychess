@@ -6,11 +6,13 @@ import step2 from "../../assets/step2.png";
 import "./ChessExperience.css";
 import Button from "../UI/Button";
 import ChessInfo from "./ChessInfo";
-import DropDown from "./DropDown";
+// import DropDown from "./DropDown";
 import DropDownPlayer from "./DropDownPlayer";
 import newClasses from "./DropDown.css";
 import ErrorModal from "../UI/ErrorModal";
 import { type } from "@testing-library/user-event/dist/type";
+import chevrondown from "../../assets/chevron.png";
+import chevronup from "../../assets/chevronup.png";
 
 const ChessExperience = (props) => {
   const level = (
@@ -28,10 +30,14 @@ const ChessExperience = (props) => {
   const [selected, setSelected] = useState(level);
   const [selectedPlayer, setSelectedPlayer] = useState(defaultPlayer);
 
+  const [isActiveLevel, setIsActiveLevel] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const options = ["beginner", "normal", "professional"];
+
   const [levelInputValid, setLevelInputValid] = useState(false);
   const [charInputValid, setCharInputValid] = useState(false);
 
-  // const [formSubmited, setFormSubmitted] = useState(null);
+  const [formSubmited, setFormSubmitted] = useState(null);
   // const [characterValid, setCharacteValid] = useState();
 
   const [players, setPlayers] = useState([]);
@@ -49,6 +55,15 @@ const ChessExperience = (props) => {
     fetchGrandmasters();
   }, []);
 
+  useEffect(() => {
+    props.setFormData({ ...props.formData, experience_level: level });
+    console.log(props.formData.experience_level);
+  }, []);
+
+  useEffect(() => {
+    props.setFormData({ ...props.formData, character_id: defaultPlayer });
+  }, []);
+
   const sendHttp = (data) => {
     return fetch("https://chess-tournament-api.devtest.ge/api/register", {
       method: "POST",
@@ -60,6 +75,7 @@ const ChessExperience = (props) => {
     }).then((response) => {
       if (!response.ok) {
         throw new Error("something went wrong");
+        console.log(response);
       }
     });
   };
@@ -67,29 +83,40 @@ const ChessExperience = (props) => {
   const formSubmitHandler = (e) => {
     //will send a POST method
     e.preventDefault();
-    // console.log("clicked");
 
     props.setFormData({
       ...props.formData,
       experience_level: selected,
     });
 
-    console.log(selected);
+    if (typeof props.formData.experience_level !== "string") {
+      setLevelInputValid(true);
+    } else if (typeof props.formData.experience_level === "string") {
+      setLevelInputValid(false);
+    }
 
-    props.setFormData({
-      ...props.formData,
-      character_id: selectedPlayer,
-    });
+    if (typeof props.formData.character_id === "object") {
+      setCharInputValid(true);
+    } else if (typeof props.formData.character_id !== "object") {
+      setCharInputValid(false);
+    }
 
-    // console.log(props.formData.experience_level);
+    if (
+      typeof props.formData.character_id === "number" &&
+      typeof props.formData.experience_level === "string"
+    ) {
+      setFormSubmitted(true);
+      sendHttp(props.formData)
+        .then(() => {
+          props.onNext();
+          localStorage.clear();
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
 
-    // if (!props.formData.experience_level) {
-    //   setLevelInputValid(true);
-    // }
-
-    // if (!props.formData.character_id) {
-    //   setCharInputValid(true);
-    // }
+      console.log(props.formData);
+    }
   };
 
   const levelErrorHandler = () => {
@@ -130,7 +157,6 @@ const ChessExperience = (props) => {
         {levelInputValid && (
           <ErrorModal target="level of knowledge" onClick={levelErrorHandler} />
         )}
-
         {charInputValid && (
           <ErrorModal target="character" onClick={charErrorHandler} />
         )}
@@ -155,15 +181,71 @@ const ChessExperience = (props) => {
       {/* <ChessInfo chessData={chessDataHandler} /> */}
 
       <div>
-        <div className="chess-info">
-          <DropDown selected={selected} setSelected={setSelected} />
+        <div className="dropdown">
+          <div
+            className="dropdown-btn"
+            onClick={(e) => setIsActiveLevel(!isActiveLevel)}
+          >
+            <p>{selected}</p>
+            <img src={!isActiveLevel ? chevrondown : chevronup} alt="chevron" />
+          </div>
+          {isActiveLevel && (
+            <div className="dropdown-content">
+              {options.map((option) => (
+                <div
+                  onClick={(e) => {
+                    setSelected(option);
+                    setIsActiveLevel(!isActiveLevel);
+                    console.log(option);
+                    props.setFormData({
+                      ...props.formData,
+                      experience_level: option,
+                    });
+                  }}
+                  className="dropdown-item"
+                  key={options[option]}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
         <div className="chess-player">
-          <DropDownPlayer
-            selectedPlayer={selectedPlayer}
-            setSelectedPlayer={setSelectedPlayer}
-            playersArray={players}
-          />
+          <div className="grandmaster">
+            <div
+              className="dropdown-btn"
+              onClick={(e) => setIsActive(!isActive)}
+            >
+              <p>{selectedPlayer}</p>
+              <img src={!isActive ? chevrondown : chevronup} alt="chevron" />
+            </div>
+            {isActive && (
+              <div className="player-content">
+                {players.map((player) => (
+                  <div
+                    onClick={(e) => {
+                      setSelectedPlayer(player.name);
+                      setIsActive(!isActive);
+                      props.setFormData({
+                        ...props.formData,
+                        character_id: Number(player.id),
+                      });
+                    }}
+                    className="player-item"
+                    key={player.id}
+                  >
+                    {player.name}
+                    <img
+                      className="player-image"
+                      src={`https://chess-tournament-api.devtest.ge/${player.image}`}
+                      alt="groSSmeister"
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="participation">
           <h1>
@@ -202,9 +284,7 @@ const ChessExperience = (props) => {
       </Button>
       <Button
         type="submit"
-        // onClick={
-        //   selected !== level && selectedPlayer !== defaultPlayer && props.onNext
-        // }
+        // onClick={formSubmited && props.onNext}
         className="done"
       >
         Done
