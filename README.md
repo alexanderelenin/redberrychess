@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+This is my first app created for internship/job.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here are some sudgestions you might like to look at while reviewing my project.
 
-## Available Scripts
+Pro's and Con's :
 
-In the project directory, you can run:
+I am pretty much sure that I have very decent and sophisticated validation mechanism used in Personal information page. please have a closer look at
 
-### `npm start`
+** name validation ( it is longer than 2 characters and ALSO can't containt any numbers)
+** email validation (very good slicing methond + @redberry.ge)
+\*\*phone number validation (not only phone is 9 digits long only , but it also has to start with 5 (as we are in georgia), but also it cannot containt any letters )
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+THE MAIN VALIDATION is validation of each input : please pay attention that I have used INVALID circle to mention that particular iput is invalid. I just forgot to make background color red when invalid, and instead made a hard work and did the following one. So it only says input is valid or not upon submission of form . It is very cool for begginer, please check. I will be honoured.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+my falls :
 
-### `npm test`
+THere are couple of disadvantages CSS wise : for example when you type in any input and then want to delete typed information - there is little background which is not in the color of the whole parent element.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+second page validation (chess experience) is not that sophisticated as personal one.
 
-### `npm run build`
+THE MAIN DISADVATAGE : on the CHess Experience page you might see that there is 1 validation for 2 inputs (level and character) This input is shared because I really had no time to change it because I needed to deal with Local Storage Things.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THanks in advance <3
