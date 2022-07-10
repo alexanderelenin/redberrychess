@@ -20,4 +20,12 @@ second page validation (chess experience) is not that sophisticated as personal 
 
 THE MAIN DISADVATAGE : on the CHess Experience page you might see that there is 1 validation for 2 inputs (level and character) This input is shared because I really had no time to change it because I needed to deal with Local Storage Things.
 
+I have really really worked very hard to reach this result
+
+I've spent 2 days on form validations and dynamic rendering.
+
+Then you can also find very strange function in HOME JS which has helped me to get rid of Error with circuiting data whily Stringifying OBject.
+
+I really hope to fulfill your requirements.
+
 THanks in advance <3
