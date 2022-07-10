@@ -5,9 +5,6 @@ import checked from "../../assets/checked.png";
 import step2 from "../../assets/step2.png";
 import "./ChessExperience.css";
 import Button from "../UI/Button";
-import ChessInfo from "./ChessInfo";
-// import DropDown from "./DropDown";
-import DropDownPlayer from "./DropDownPlayer";
 import newClasses from "./DropDown.css";
 import ErrorModal from "../UI/ErrorModal";
 import { type } from "@testing-library/user-event/dist/type";
@@ -57,39 +54,17 @@ const ChessExperience = (props) => {
 
   useEffect(() => {
     props.setFormData({ ...props.formData, experience_level: level });
-    console.log(props.formData.experience_level);
   }, []);
 
   useEffect(() => {
     props.setFormData({ ...props.formData, character_id: defaultPlayer });
   }, []);
 
-  const sendHttp = (data) => {
-    return fetch("https://chess-tournament-api.devtest.ge/api/register", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }).then((response) => {
-      if (!response.ok) {
-        throw new Error("something went wrong");
-        console.log(response);
-      }
-    });
-  };
-
   const formSubmitHandler = (e) => {
     //will send a POST method
     e.preventDefault();
 
-    props.setFormData({
-      ...props.formData,
-      experience_level: selected,
-    });
-
-    if (typeof props.formData.experience_level !== "string") {
+    if (typeof props.formData.experience_level === "object") {
       setLevelInputValid(true);
     } else if (typeof props.formData.experience_level === "string") {
       setLevelInputValid(false);
@@ -106,16 +81,8 @@ const ChessExperience = (props) => {
       typeof props.formData.experience_level === "string"
     ) {
       setFormSubmitted(true);
-      sendHttp(props.formData)
-        .then(() => {
-          props.onNext();
-          localStorage.clear();
-        })
-        .catch((err) => {
-          alert(err.message);
-        });
 
-      console.log(props.formData);
+      props.onNext();
     }
   };
 
@@ -134,7 +101,6 @@ const ChessExperience = (props) => {
       already_participated: participated,
     });
   };
-  const chessDataHandler = () => {};
 
   return (
     <form onSubmit={formSubmitHandler}>
@@ -158,7 +124,7 @@ const ChessExperience = (props) => {
           <ErrorModal target="level of knowledge" onClick={levelErrorHandler} />
         )}
         {charInputValid && (
-          <ErrorModal target="character" onClick={charErrorHandler} />
+          <ErrorModal target="character and level" onClick={charErrorHandler} />
         )}
 
         <div className={classes.progress}>
@@ -196,7 +162,7 @@ const ChessExperience = (props) => {
                   onClick={(e) => {
                     setSelected(option);
                     setIsActiveLevel(!isActiveLevel);
-                    console.log(option);
+
                     props.setFormData({
                       ...props.formData,
                       experience_level: option,
@@ -284,7 +250,7 @@ const ChessExperience = (props) => {
       </Button>
       <Button
         type="submit"
-        // onClick={formSubmited && props.onNext}
+        onClick={formSubmited && props.onNext}
         className="done"
       >
         Done

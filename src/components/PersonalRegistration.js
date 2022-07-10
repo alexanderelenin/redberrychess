@@ -105,7 +105,7 @@ const PersonalRegistration = (props) => {
     e.preventDefault();
     e.target.style.display = "none";
     e.target.nextElementSibling.focus();
-    console.log("clicked");
+    
   };
 
   const labelUnfocus = (e) => {

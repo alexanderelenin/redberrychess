@@ -1,6 +1,6 @@
 .personal {
-  position: absolute;
-  left: 991px;
+  position: fixed;
+  left: 971px;
   top: 325px;
   display: flex;
   flex-direction: column;

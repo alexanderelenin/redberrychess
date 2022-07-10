@@ -1,8 +1,8 @@
 .personal-chess h1 {
-  position: absolute;
+  position: fixed;
   width: 269px;
   height: 48px;
-  left: 991px;
+  left: 971px;
   top: 324px;
 
   font-family: "Open Sans";
@@ -15,10 +15,10 @@
   color: #000000;
 }
 .personal-chess > p {
-  position: absolute;
+  position: fixed;
   width: 205px;
   height: 21px;
-  left: 991px;
+  right: 745px;
   top: 375px;
 
   font-family: "Open Sans";
@@ -50,4 +50,10 @@
   text-transform: capitalize;
 
   color: #212529;
+}
+
+.valid {
+  position: absolute;
+  right: 10px;
+  top: 12px;
 }

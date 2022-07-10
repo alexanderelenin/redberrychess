@@ -1,6 +1,6 @@
 .registration {
   background-color: #fd5334;
-  position: absolute;
+  position: fixed;
   width: 997px;
   height: 1080px;
   left: 923px;

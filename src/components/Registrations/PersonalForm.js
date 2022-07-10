@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PersonalInfo from "./PersonalInfo";
+
 import classes from "./Form.module.css";
 import step1 from "../../assets/step1.png";
 import step2 from "../../assets/step2.png";

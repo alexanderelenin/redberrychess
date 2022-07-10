@@ -7,23 +7,22 @@
   width: 923px;
   height: 84px;
   background-color: #7025fb;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
 }
 
 .header .logo {
-  position: absolute;
-  left: 6.5%;
-  right: 63.62%;
-  top: 35.71%;
+  position: fixed;
+  left: 60px;
+  top: 30px;
   bottom: 36.49%;
   z-index: 2;
 }
 
 .landing {
-  position: absolute;
+  position: fixed;
   width: 923px;
   height: inherit;
   left: 0px;
@@ -65,6 +64,21 @@
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.onboarding-header {
+  background: url("../assets/chessboard.png");
+  position: fixed;
+  width: 923px;
+  height: 1046px;
+  left: 0px;
+  top: 84px;
+}
+
+.onboarding-header > img {
+  position: fixed;
+  top: 416px;
+  left: 1201px;
 }
 
 .chess-quote {

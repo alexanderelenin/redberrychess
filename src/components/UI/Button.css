@@ -1,7 +1,7 @@
 .btn-next {
   background-color: #212529;
   color: white;
-  position: absolute;
+  position: fixed;
   align-items: center;
   display: flex;
   width: 128px;
@@ -14,13 +14,13 @@
   border-radius: 8px;
   padding: 13px 24px;
   gap: 10px;
-  left: 1638px;
+  left: 1618px;
   top: 873px;
 }
 .done {
   background-color: #212529;
   color: white;
-  position: absolute;
+  position: fixed;
   align-items: center;
   text-align: center;
   width: 100px;
@@ -33,7 +33,7 @@
   border-radius: 8px;
   padding: 10px 24px;
 
-  right: 138px;
+  right: 150px;
   top: 873px;
 }
 
@@ -47,10 +47,10 @@
   align-items: center;
   padding: 13px 24px;
   gap: 10px;
-  position: absolute;
+  position: fixed;
   width: 93px;
   height: 53px;
-  left: 991px;
+  left: 971px;
   top: 873px;
   border: 1px solid #212529;
   border-radius: 8px;
